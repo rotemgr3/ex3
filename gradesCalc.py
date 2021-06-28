@@ -40,7 +40,7 @@ def final_grade(input_path: str, output_path: str) -> int:
         value = [int(parameters[3]), student_grade]
         students[key] = value #update student to last record or insert a new student
 
-    print_to_file(students, output_path) #print to ouyput file
+    print_to_file(students, output_path) #print to output file
 
     class_avg = sum([students[id][1] for id in students]) #compute class average
     if len(students) == 0: #check if input file is empty or there are no valid rows 
