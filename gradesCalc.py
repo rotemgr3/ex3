@@ -18,7 +18,6 @@ def checkArgs(parameters):
 def print_to_file(students: dict, output_path: str):
     out_file = open(output_path, 'w') #open file on write mode
     for key in sorted(students): #iterate in an ordered way
-        #class_avg += students[key][1] #cumulative sum
         #construct string 
         str_to_print = "{id}, {homework_avg}, {final_grade}\n".format(id=key, homework_avg=students[key][0], 
                                                                 final_grade=students[key][1])
@@ -41,7 +40,7 @@ def final_grade(input_path: str, output_path: str) -> int:
         value = [int(parameters[3]), student_grade]
         students[key] = value #update student to last record or insert a new student
 
-    print_to_file(students, output_path)
+    print_to_file(students, output_path) #print to ouyput file
 
     class_avg = sum([students[id][1] for id in students]) #compute class average
     if len(students) == 0: #check if input file is empty or there are no valid rows 
